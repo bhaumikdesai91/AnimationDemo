@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GradientView: UIView {
+class GradientView: UIView,CAAnimationDelegate {
     
     var gradient: CAGradientLayer!
     override init(frame:CGRect) {
@@ -23,10 +23,10 @@ class GradientView: UIView {
         // Create the gradient
         self.gradient = CAGradientLayer()
         // Set colors
-        gradient.colors = [(lightOp.CGColor as AnyObject), (darkOp.CGColor as AnyObject)]
+        gradient.colors = [(lightOp.cgColor as AnyObject), (darkOp.cgColor as AnyObject)]
         // Set bounds
         gradient.frame = self.bounds
-        self.layer.insertSublayer(gradient, atIndex: 0)
+        self.layer.insertSublayer(gradient, at: 0)
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -49,19 +49,20 @@ class GradientView: UIView {
         
         let animation: CABasicAnimation = CABasicAnimation(keyPath: "colors")
         animation.fromValue = self.gradient.colors
-        animation.toValue = [(lightOp.CGColor as AnyObject), (darkOp.CGColor as AnyObject)]
+        animation.toValue = Array([lightOp.cgColor, darkOp.cgColor])
         animation.duration = 5.00
-        animation.removedOnCompletion = false
+        animation.isRemovedOnCompletion = false
         //        animation.fillMode = kCAFillModeForwards
         animation.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionLinear)
         animation.delegate = self
         animation.autoreverses = true
         // Add the animation to our layer
-        self.gradient.addAnimation(animation, forKey: "animateGradient")
+        self.gradient.add(animation, forKey: "animateGradient")
     }
     
-    override func animationDidStop(anim: CAAnimation, finished flag: Bool) {
-        setViewColor();
+    func animationDidStop(anim: CAAnimation, finished flag: Bool) {
+            setViewColor();
     }
+    
 
 }
