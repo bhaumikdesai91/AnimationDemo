@@ -45,7 +45,6 @@
 		0AEBD4361AFB9A73001D9670 /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AEBD4351AFB9A73001D9670 /* ActivityViewController.m */; };
 		0AEE43501B37EF5200932683 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AEE434F1B37EF5200932683 /* CFNetwork.framework */; };
 		0AEE43521B37EF6900932683 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AEE43511B37EF6900932683 /* SystemConfiguration.framework */; };
-		0AEE43541B37EF7100932683 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AEE43531B37EF7100932683 /* StoreKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		0AEE43841B37F5F000932683 /* Appirater.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AEE435E1B37F5D800932683 /* Appirater.m */; };
 		0AF563381AE7CF6700E86DDC /* MaterialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF563371AE7CF6700E86DDC /* MaterialViewController.m */; };
 /* End PBXBuildFile section */
@@ -131,7 +130,6 @@
 		0AEBD4351AFB9A73001D9670 /* ActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
 		0AEE434F1B37EF5200932683 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		0AEE43511B37EF6900932683 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		0AEE43531B37EF7100932683 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		0AEE435C1B37F5D800932683 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		0AEE435D1B37F5D800932683 /* Appirater.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Appirater.h; sourceTree = "<group>"; };
 		0AEE435E1B37F5D800932683 /* Appirater.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Appirater.m; sourceTree = "<group>"; };
@@ -182,7 +180,6 @@
 			files = (
 				0A621EDF1CC8AC11008F61FD /* QuartzCore.framework in Frameworks */,
 				0A5592021BBD4F760016D82C /* CoreMotion.framework in Frameworks */,
-				0AEE43541B37EF7100932683 /* StoreKit.framework in Frameworks */,
 				0AEE43521B37EF6900932683 /* SystemConfiguration.framework in Frameworks */,
 				0AEE43501B37EF5200932683 /* CFNetwork.framework in Frameworks */,
 			);
@@ -235,7 +232,6 @@
 				0A621EDE1CC8AC11008F61FD /* QuartzCore.framework */,
 				0A5592011BBD4F760016D82C /* CoreMotion.framework */,
 				0AEE435B1B37F5D800932683 /* appirater-master */,
-				0AEE43531B37EF7100932683 /* StoreKit.framework */,
 				0AEE43511B37EF6900932683 /* SystemConfiguration.framework */,
 				0AEE434F1B37EF5200932683 /* CFNetwork.framework */,
 				0A70DF4C1AAD73830080ED8D /* AnimationDemo */,
@@ -576,6 +572,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 				ar,
@@ -848,20 +845,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R3JAE77J7A;
 				INFOPLIST_FILE = AnimationDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.digicorp.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bhaumikdesai.AnimationDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "AnimationDemo/AnimationDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -870,19 +867,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R3JAE77J7A;
 				INFOPLIST_FILE = AnimationDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.digicorp.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bhaumikdesai.AnimationDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "AnimationDemo/AnimationDemo-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

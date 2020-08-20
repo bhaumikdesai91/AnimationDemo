@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GradientView: UIView,CAAnimationDelegate {
+class GradientView: UIView, CAAnimationDelegate {
     
     var gradient: CAGradientLayer!
     override init(frame:CGRect) {
@@ -53,16 +53,14 @@ class GradientView: UIView,CAAnimationDelegate {
         animation.duration = 5.00
         animation.isRemovedOnCompletion = false
         //        animation.fillMode = kCAFillModeForwards
-        animation.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionLinear)
+        animation.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.linear)
         animation.delegate = self
         animation.autoreverses = true
         // Add the animation to our layer
         self.gradient.add(animation, forKey: "animateGradient")
     }
     
-    func animationDidStop(anim: CAAnimation, finished flag: Bool) {
-            setViewColor();
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        setViewColor();
     }
-    
-
 }
